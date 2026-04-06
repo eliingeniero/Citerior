@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CITERIOR | Servicios</title>
+    <meta name="description" content="Servicios de arquitectura: Obra nueva, rehabilitación, dirección de obra y Project Management. Soluciones integrales y sostenibles." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles_globales.css" />
+    <link rel="stylesheet" href="styles_servicios.css" />
+  </head>
+
+  <body>
+    <!-- BARRARRIBA -->
+    <header class="barrarriba">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="CITERIOR" />
+      </a>
+
+      <!-- NAVARRIBA -->
+      <nav>
+        <ul class="enlaces-barranav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estudio.html">El estudio</a></li>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- CABECERA ELEGANTE -->
+      <section class="cabecera-seccion">
+        <h1 class="titulopag">SERVICIOS</h1>
+      </section>
+
+      <!-- LISTA DE SERVICIOS: Presentación vertical elegante -->
+      <section class="contenedor-servicios">
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Proyectos de obra nueva',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            )
+          "
+        >
+          <span class="servicio-numero">01</span>
+          <h2 class="servicio-titulo">Proyectos de obra nueva</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Rehabilitación y reforma',
+              'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+            )
+          "
+        >
+          <span class="servicio-numero">02</span>
+          <h2 class="servicio-titulo">Rehabilitación y reforma</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Dirección de obra',
+              'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.',
+            )
+          "
+        >
+          <span class="servicio-numero">03</span>
+          <h2 class="servicio-titulo">Dirección de obra</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Obra civil - project manager',
+              'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi.',
+            )
+          "
+        >
+          <span class="servicio-numero">04</span>
+          <h2 class="servicio-titulo">Obra civil - project manager</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Energías renovables - BIOENERGY IBÉRICA',
+              '<p>Bioenergy Ibérica es una compañía líder en el sector industrial con ingenieros altamente cualificados con más de 20 años de experiencia en el sector de la biomasa y el biogás. OJO TEXTOOOOOO En la actualidad como referencia de empresas líder del sector agroalimentario, dando soluciones reales con funcionamiento acreditado para cumplir los altos estándares de exigencia de la industria, así como el cumplimiento de toda la normativa actual en vigor en materia medioambiental y de descarbonización. Utiliza para ello la gestión de residuos/subproductos en los que su valorización y gestión eficiente y sostenible, producen además un ahorro del agua.</p><p>Citerior, como colaboradores de Bioenergy Ibérica, proyecta, dirige y construye aportando su experiencia y recursos para cumplir las exigencias industriales, todo ello desde la planificación y los requerimientos exigidos hasta la finalización de la obra.</p><strong>Últimos proyectos:</strong><ul><li>Caldera de biomasa Nestlé, Cantabria (2022).</li><li>Producción de biogás industria láctea, A Coruña (2024).</li><li>Caldera de Biomasa aceite térmico, Burgos (En construcción).</li></ul>',
+              'img/33.png',
+            )
+          "
+        >
+          <span class="servicio-numero">05</span>
+          <h2 class="servicio-titulo">Energías renovables - BIOENERGY IBÉRICA</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Documentación técnica',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            )
+          "
+        >
+          <span class="servicio-numero">06</span>
+          <h2 class="servicio-titulo">Documentación técnica</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div
+          class="servicio-item"
+          onclick="
+            abrirServicio(
+              'Modelado y visualización 3D',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            )
+          "
+        >
+          <span class="servicio-numero">07</span>
+          <h2 class="servicio-titulo">Modelado y visualización 3D</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </section>
+    </main>
+
+    <!-- VISOR DE DETALLE DE SERVICIO -->
+    <div id="servicioVisor" class="servicio-visor">
+      <div class="visor-contenido">
+        <span class="visor-cerrar" onclick="cerrarServicio()">&times;</span>
+        <div id="visorLogoContenedor" class="visor-logo-contenedor" style="display: none">
+          <img id="visorLogo" src="" alt="Bioenergy Ibérica" class="visor-logo" />
+          <span class="colab-tag">Empresa Colaboradora</span>
+        </div>
+        <h2 id="servicioTitulo"></h2>
+        <div id="servicioDescripcion" class="visor-cuerpo"></div>
+      </div>
+    </div>
+
+    <script>
+      function abrirServicio(titulo, descripcion, logo = null) {
+        const visor = document.getElementById("servicioVisor");
+        const logoContenedor = document.getElementById("visorLogoContenedor");
+        const logoImg = document.getElementById("visorLogo");
+
+        document.getElementById("servicioTitulo").innerText = titulo;
+        document.getElementById("servicioDescripcion").innerHTML = descripcion;
+
+        if (logo) {
+          logoImg.src = logo;
+          logoContenedor.style.display = "block";
+        } else {
+          logoContenedor.style.display = "none";
+        }
+
+        visor.classList.add("active");
+        document.body.style.overflow = "hidden"; // Bloquea scroll
+      }
+
+      function cerrarServicio() {
+        const visor = document.getElementById("servicioVisor");
+        visor.classList.remove("active");
+        document.body.style.overflow = "auto"; // Restaura scroll
+      }
+
+      // Cerrar al hacer clic fuera del contenido
+      window.onclick = function (event) {
+        const visor = document.getElementById("servicioVisor");
+        if (event.target == visor) {
+          cerrarServicio();
+        }
+      };
+    </script>
+
+    <!-- BARRABAJO -->
+    <footer class="barrabajo">
+      <div class="barrabajo-container">
+        <nav class="navabajo">
+          <ul class="enlaces-barranav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="estudio.html">El estudio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="index.html" class="barrabajo-logo">
+          <img src="img/logo.png" alt="CITERIOR" />
+        </a>
+        <div class="barrabajo-copy">
+          <p>
+            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="accesibilidad.html">Accesibilidad</a> |
+            <a href="cookies.html">Cookies</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

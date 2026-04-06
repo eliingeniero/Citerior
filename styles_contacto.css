@@ -1,0 +1,130 @@
+/* ==========================================================================
+   SECCIÓN: CONTACTO
+   ========================================================================== */
+:root {
+  /* Variables específicas para el formulario e iconos de contacto */
+  --contacto-caja-borde: rgba(139, 30, 45, 0.15);
+  --contacto-social-tamano: 1.8rem;
+  --contacto-item-gap: var(--spacing-xs);
+}
+
+/* Contenedor que agrupa info y formulario */
+.cuadrado-contacto {
+  padding: var(--padding-seccion-v) var(--spacing-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columna izquierda: Información de contacto */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: var(--spacing-m);
+}
+/* Caja blanca que contiene los datos de contacto */
+.contact-box {
+  background-color: var(--base-blanco);
+  padding: var(--spacing-m);
+  border: 1px solid var(--contacto-caja-borde);
+  border-radius: var(--card-radio);
+  box-shadow: var(--card-sombra);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  max-width: 600px;
+  width: 100%;
+}
+/* Enlace individual de contacto (teléfono, email, mapa) */
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  color: var(--body-texto-color);
+  font-size: 1.1rem;
+  transition: var(--transicion-std);
+}
+.contact-item:hover {
+  color: var(--base-granate);
+}
+/* Bloque de iconos de redes sociales */
+.contact-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-l);
+}
+.contact-social a {
+  font-size: var(--contacto-social-tamano);
+  color: var(--body-texto-color);
+  transition: var(--transicion-std);
+}
+.contact-social a:hover {
+  color: var(--base-granate);
+}
+
+/* Columna derecha: Formulario de contacto */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--cabecera-fondo);
+  padding: var(--spacing-m);
+}
+.form-group {
+  margin-bottom: var(--spacing-l);
+}
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xxs);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-s);
+  border: 1px solid var(--base-gris-borde);
+  outline: none;
+}
+/* Botón de envío específico */
+.btn-enviar {
+  width: 100%;
+  padding: var(--spacing-m);
+  background: var(--base-granate);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: var(--fuente-titulos);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-std);
+}
+
+/* Ajustes de layout para contacto en pantallas grandes (Dos columnas) */
+@media (min-width: 768px) {
+  .cuadrado-contacto {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--spacing-xxl);
+  }
+  .contact-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  .contact-social {
+    justify-content: flex-start;
+  }
+  .contact-info,
+  .contact-form {
+    flex: 1;
+  }
+}

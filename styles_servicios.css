@@ -1,0 +1,115 @@
+/* ==========================================================================
+   SECCIÓN: SERVICIOS
+   ========================================================================== */
+:root {
+  /* Parámetros para la lista de servicios y sus modales */
+  --servicio-lista-ancho-max: 900px;
+  --servicio-item-padding: var(--spacing-m);
+  --servicio-numero-color: var(--base-granate);
+  --servicio-flecha-opacidad: 0.4;
+  --modal-fondo-overlay: rgba(0, 0, 0, 0.4);
+  --modal-content-bg: #fdfdfd;
+  --modal-ancho-max: 600px;
+  --modal-animacion-tiempo: 0.4s;
+  --modal-sombra: 0 20px 50px rgba(0, 0, 0, 0.2);
+  --modal-borde-decorativo: 5px;
+}
+
+/* Contenedor central de la lista de servicios */
+.contenedor-servicios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  max-width: var(--servicio-lista-ancho-max);
+  margin: var(--padding-seccion-v) auto;
+  padding: 0 var(--padding-seccion-h-short);
+}
+
+/* Fila individual de servicio con efectos de hover */
+.servicio-item {
+  display: flex;
+  align-items: center;
+  padding: var(--servicio-item-padding);
+  background-color: var(--card-fondo);
+  border: 1px solid var(--subcabecera-borde-color);
+  border-radius: var(--card-radio);
+  box-shadow: var(--card-sombra);
+  cursor: pointer;
+  transition: var(--transicion-std);
+}
+
+.servicio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-sombra-hover);
+  border-color: var(--base-granate);
+}
+/* Número decorativo lateral (01, 02...) */
+.servicio-numero {
+  font-family: var(--fuente-titulos);
+  font-size: 1.2rem;
+  color: var(--servicio-numero-color);
+  margin-right: var(--spacing-l);
+  font-weight: 700;
+}
+/* Nombre del servicio */
+.servicio-titulo {
+  font-size: 1.4rem;
+  letter-spacing: var(--ls-titles);
+  flex-grow: 1;
+  margin: 0;
+}
+.servicio-item i {
+  font-size: 1.2rem;
+  color: var(--base-granate);
+  opacity: var(--servicio-flecha-opacidad);
+  transition: var(--transicion-std);
+}
+.servicio-item:hover i {
+  opacity: 1;
+  transform: translateX(10px);
+}
+
+/* Contenedor de pantalla completa para el detalle del servicio */
+.servicio-visor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-fondo-overlay);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-l);
+  opacity: 0;
+  transition: opacity var(--modal-animacion-tiempo) ease;
+}
+.servicio-visor.active {
+  display: flex;
+  opacity: 1;
+}
+/* Caja interna del modal con animación de entrada */
+.servicio-visor .visor-contenido {
+  background-color: var(--modal-content-bg);
+  max-width: var(--modal-ancho-max);
+  width: 100%;
+  position: relative;
+  padding: var(--spacing-l);
+  border-left: var(--modal-borde-decorativo) solid var(--base-granate);
+  box-shadow: var(--modal-sombra);
+  transform: translateY(30px);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.servicio-visor.active .visor-contenido {
+  transform: translateY(0);
+}
+.servicio-visor .visor-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
+}

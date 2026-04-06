@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CITERIOR | Arquitectura y Urbanismo</title>
+    <meta name="description" content="Estudio de Arquitectura y Urbanismo Citerior. Proyectos singulares, diseño sostenible y rehabilitación." />
+
+    <link rel="stylesheet" href="styles_globales.css" />
+    <link rel="stylesheet" href="styles_inicio.css" />
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- TIPOGRAFÍAS -->
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- BARRARRIBA: Cabecera fija con logo -->
+    <header class="barrarriba">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="CITERIOR" />
+      </a>
+
+      <!-- NAVARRIBA: Menú de navegación principal -->
+      <nav>
+        <ul class="enlaces-barranav">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="estudio.html">El estudio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- PORTADA PRINCIPAL -->
+    <main>
+      <section class="portada-bienvenida">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+          <h1 class="titulopag">Arquitectura +<br />Urbanismo</h1>
+
+          <div class="card">
+            <p>
+              En Citerior seguimos sintiendo el espíritu de aquellos jóvenes de la Rice School of Architecture, quienes allá por el año 1968 con sus camisas blancas y sentados en el césped de la
+              facultad bajo el cálido sol de Houston, le escuchaban decir al maestro Kahn: “No conozco servicio más grande que un arquitecto puede hacer, en tanto que profesional, que darse cuenta de
+              que cada edificio debe servir a una institución del hombre, tanto si la institución es de gobierno, de hogar, de aprendizaje, de salud o de ocio”.
+            </p>
+          </div>
+
+          <a href="estudio.html" class="btn">Saber más</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- BARRABAJO -->
+    <footer class="barrabajo">
+      <div class="barrabajo-container">
+        <nav class="navabajo">
+          <ul class="enlaces-barranav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="estudio.html">El estudio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <a href="index.html" class="barrabajo-logo">
+          <img src="img/logo.png" alt="CITERIOR" />
+        </a>
+        <div class="barrabajo-copy">
+          <p>
+            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="accesibilidad.html">Accesibilidad</a> |
+            <a href="cookies.html">Cookies</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BANNER DE COOKIES -->
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-content">
+        <p>
+          Utilizamos cookies propias y de terceros para analizar nuestros servicios. Puedes aceptarlas todas o configurar tu elección. Consulta nuestra <a href="cookies.html">Política de Cookies</a>.
+        </p>
+        <div class="cookie-buttons">
+          <button onclick="handleCookies('rechazadas')" class="btn btn-outline">Denegar</button>
+          <button onclick="handleCookies('aceptadas')" class="btn">Aceptar todas</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleCookies(decision) {
+        localStorage.setItem("cookieConsent", decision);
+        document.getElementById("cookie-banner").style.display = "none";
+      }
+
+      window.onload = function () {
+        if (!localStorage.getItem("cookieConsent")) {
+          document.getElementById("cookie-banner").style.display = "block";
+        }
+      };
+    </script>
+  </body>
+</html>

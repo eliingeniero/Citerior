@@ -1,0 +1,371 @@
+/* ==========================================================================
+   VARIABLES GLOBALES
+   ========================================================================== */
+:root {
+  /* --- PALETA DE COLORES BASE --- */
+  --base-granate: #8b1e2d;
+  --base-granate-oscuro: #6f1723;
+  --base-negro: #333333;
+  --base-gris-oscuro: #555555;
+  --base-gris-medio: #777777;
+  --base-gris-borde: #cccccc;
+  --base-gris-suave: #eeeeee;
+  --base-blanco: #ffffff;
+  --base-blanco-sucio: #f5f5f5;
+
+  /* --- ESCALA DE ESPACIADO SEMÁNTICO --- */
+  --spacing-xxs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-s: 1rem; /* 16px */
+  --spacing-m: 1.5rem; /* 24px */
+  --spacing-l: 2rem; /* 32px */
+  --spacing-xl: 4rem; /* 64px */
+  --spacing-xxl: 6rem; /* 96px */
+
+  /* --- VARIABLES SEMÁNTICAS --- */
+  /* Define colores y medidas aplicadas a elementos específicos */
+  --body-texto-color: var(--base-negro);
+  --body-line-height: 1.6;
+  --titulo-principal-color: var(--base-granate);
+  --titulo-letra-espaciado: var(--spacing-xs);
+  --cabecera-fondo: rgba(255, 255, 255, 0.9);
+  --cabecera-desenfoque: blur(6px);
+  --cabecera-padding-v: var(--spacing-s);
+  --cabecera-padding-h: 5%;
+  --cabecera-logo-altura: 60px;
+  --menu-link-color: var(--base-negro);
+  --menu-link-activo-color: var(--base-granate);
+  --menu-gap: var(--spacing-m);
+  --subcabecera-fondo: rgba(255, 255, 255, 0.4);
+  --subcabecera-borde-color: rgba(139, 30, 45, 0.1);
+  --subcabecera-decoracion-ancho: 80px;
+  --boton-fondo: var(--base-granate);
+  --boton-fondo-hover: var(--base-granate-oscuro);
+  --boton-texto-color: var(--base-blanco);
+  --boton-padding: var(--spacing-xs) var(--spacing-m);
+  --card-fondo: var(--base-blanco);
+  --card-borde-color: var(--base-gris-suave);
+  --card-sombra: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --card-sombra-hover: 0 15px 30px rgba(0, 0, 0, 0.1);
+  --card-radio: var(--spacing-xxs);
+  --barrabajo-fondo: var(--base-blanco-sucio);
+  --barrabajo-padding: var(--spacing-xl) var(--spacing-s);
+  --barrabajo-logo-altura: 50px;
+  --barrabajo-texto-color: var(--base-gris-oscuro);
+  --barrabajo-copy-size: 13px;
+  --transicion-std: 0.4s ease;
+  --transicion-fast: 0.25s ease;
+  --fuente-principal: "Montserrat", sans-serif;
+  --fuente-titulos: "Antonio", sans-serif;
+  --padding-seccion-v: var(--spacing-xxl);
+  --padding-seccion-h-short: 5%;
+  --padding-seccion-h: 10%;
+  --ls-std: 1px;
+  --ls-titles: 3px;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+* {
+  /* Normalización de márgenes y box-sizing para evitar problemas de layout */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fuente-principal), sans-serif;
+}
+
+/* Define cuánto espacio se deja en la parte superior del body para evitar que el menú fijo tape el contenido */
+body {
+  padding-top: 25px;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 25px;
+  }
+}
+
+/* Fondo general del sitio y tipografía base */
+body {
+  color: var(--body-texto-color);
+  line-height: var(--body-line-height);
+  background-image: url("img/fondo01.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Estilo común para todos los encabezados */
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-titles);
+  font-weight: 400;
+  margin-bottom: var(--spacing-l);
+}
+
+/* Clase específica para los títulos de cada página (efecto clamp para responsive) */
+.titulopag {
+  font-family: var(--fuente-titulos);
+  color: var(--titulo-principal-color);
+  font-size: clamp(35px, 6vw, 55px);
+  letter-spacing: var(--titulo-letra-espaciado);
+  margin-bottom: var(--spacing-xs);
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN
+   ========================================================================== */
+/* Contenedor de la cabecera fija */
+.barrarriba {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: var(--cabecera-padding-v) var(--cabecera-padding-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cabecera-fondo);
+  backdrop-filter: var(--cabecera-desenfoque);
+  z-index: 1000;
+}
+
+/* Logotipo y efectos de interacción */
+.logo img {
+  height: var(--cabecera-logo-altura);
+}
+.logo:hover {
+  opacity: 0.8;
+  transition: var(--transicion-std);
+}
+
+/* Estilos de los enlaces del menú principal */
+.enlaces-barranav {
+  list-style: none;
+  display: flex;
+  gap: var(--menu-gap);
+}
+.enlaces-barranav a {
+  text-decoration: none;
+  color: var(--menu-link-color);
+  transition: var(--transicion-fast);
+}
+.enlaces-barranav a:hover,
+.enlaces-barranav a.active {
+  color: var(--menu-link-activo-color);
+}
+.enlaces-barranav a.active {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES
+   ========================================================================== */
+/* Subtítulo elegante usado en varias secciones */
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--base-granate);
+  margin-top: var(--spacing-s);
+  letter-spacing: var(--ls-std);
+  text-transform: uppercase;
+}
+/* Botón general granate */
+.btn {
+  display: inline-block;
+  padding: var(--boton-padding);
+  background: var(--boton-fondo);
+  color: var(--boton-texto-color);
+  border-radius: var(--card-radio);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transicion-std);
+}
+.btn:hover {
+  background: var(--boton-fondo-hover);
+}
+/* Clases de espaciado de sección */
+.section {
+  padding: var(--padding-seccion-v) var(--padding-seccion-h);
+}
+/* Grid genérico para tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-m);
+}
+/* Tarjeta blanca básica */
+.card {
+  padding: var(--spacing-m);
+  background: var(--card-fondo);
+  border: 1px solid var(--card-borde-color);
+  border-radius: var(--card-radio);
+  box-shadow: var(--card-sombra);
+  transition: var(--transicion-std);
+}
+.split {
+  display: flex;
+  gap: var(--spacing-l);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Cabecera visual que aparece en la parte superior de las subpáginas */
+.cabecera-seccion {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--spacing-l); /* Reducimos el padding interno ya que el body ya tiene padding-top */
+  text-align: center;
+  background: var(--subcabecera-fondo);
+  border-bottom: 1px solid var(--subcabecera-borde-color);
+  position: relative;
+}
+
+/* Línea decorativa bajo el título de sección */
+.cabecera-seccion::after {
+  content: "";
+  position: absolute;
+  bottom: var(--spacing-l);
+  width: var(--subcabecera-decoracion-ancho);
+  height: 2px;
+  background: var(--base-granate);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+/* Contenedor del pie de página */
+.barrabajo {
+  background: var(--barrabajo-fondo);
+  padding: var(--barrabajo-padding);
+}
+/* Layout del footer centrado por defecto */
+.barrabajo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+  align-items: center;
+  text-align: center;
+}
+.barrabajo-logo img {
+  height: var(--barrabajo-logo-altura);
+}
+.barrabajo-copy {
+  font-size: var(--barrabajo-copy-size);
+  color: var(--barrabajo-texto-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE GLOBAL
+   ========================================================================== */
+/* Ajustes para tablets y escritorio */
+@media (min-width: 768px) {
+  .barrarriba {
+    padding: var(--spacing-l) var(--padding-seccion-h);
+  }
+  .barrabajo-container {
+    grid-template-columns: auto 1fr auto;
+    gap: var(--spacing-xl);
+  }
+}
+
+/* ==========================================================================
+   BANNER DE COOKIES (NUEVOS ESTILOS)
+   ========================================================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: var(--base-blanco);
+  border: 1px solid var(--base-granate);
+  padding: var(--spacing-m);
+  z-index: 9999;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: none; /* Se activa por JS */
+  border-radius: var(--card-radio);
+}
+
+.cookie-content p {
+  font-size: 14px;
+  margin-bottom: var(--spacing-s);
+  color: var(--base-negro);
+  text-align: left;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: var(--spacing-s);
+  justify-content: flex-end;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--base-granate);
+  border: 1px solid var(--base-granate);
+}
+
+.btn-outline:hover {
+  background: var(--base-blanco-sucio);
+}
+
+/* ==========================================================================
+   FORMULARIOS (AJUSTE PRIVACIDAD)
+   ========================================================================== */
+.checkbox-privacidad {
+  display: flex;
+  align-items: flex-start; /* Alinea el check con el inicio del texto */
+  gap: 10px;
+  margin: var(--spacing-m) 0;
+  text-align: left;
+}
+
+.checkbox-privacidad input[type="checkbox"] {
+  width: auto !important; /* Evita que el checkbox intente ocupar todo el ancho */
+  margin-top: 4px; /* Ajuste fino para que quede centrado con la primera línea */
+  flex-shrink: 0; /* Evita que el checkbox se encoja si el texto es largo */
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   PÁGINAS LEGALES
+   ========================================================================== */
+.contenido-legal {
+  padding: 120px var(--padding-seccion-h-short) var(--spacing-xl);
+  max-width: 900px;
+  margin: auto;
+  min-height: 60vh;
+  text-align: left;
+}
+
+.checkbox-privacidad label {
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 767px) {
+  .barrarriba {
+    flex-direction: column;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s);
+  }
+  .enlaces-barranav {
+    gap: var(--spacing-s);
+    font-size: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

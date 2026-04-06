@@ -1,0 +1,114 @@
+/* ==========================================================================
+   SECCIÓN: PROYECTOS Y GALERÍA
+   ========================================================================== */
+:root {
+  /* Variables para la rejilla de proyectos y el visor de imágenes */
+  --img-proyecto-altura: 250px;
+  --visor-fondo-overlay: rgba(0, 0, 0, 0.5); /* Fondo oscuro como en servicios */
+}
+
+/* Disposición de la galería de proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-l);
+  padding: var(--spacing-l) 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--hero-overlay-color);
+}
+
+/* Tarjeta individual de proyecto con borde inferior dinámico */
+.project {
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  background: var(--base-blanco);
+  overflow: hidden;
+  border-bottom: 5px solid transparent;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-sombra-hover);
+  border-bottom-color: var(--base-negro);
+}
+/* Imagen de miniatura del proyecto */
+.project img {
+  width: 100%;
+  height: var(--img-proyecto-altura);
+  object-fit: cover;
+}
+.project h3 {
+  margin: var(--spacing-s) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
+  font-size: 1.1rem;
+  letter-spacing: var(--ls-std);
+}
+.project p {
+  font-size: 0.85rem;
+  color: var(--base-gris-medio);
+  margin: 0 var(--spacing-s) var(--spacing-s) var(--spacing-s);
+}
+
+/* Visor de imágenes de la galería estilo Servicios */
+.proyecto-visor {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--visor-fondo-overlay);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-l);
+}
+
+.proyecto-visor .visor-contenido {
+  background-color: var(--base-blanco);
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  padding: var(--spacing-l);
+  border-left: 5px solid var(--base-granate); /* Borde decorativo igual a servicios */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proyecto-visor h2 {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-m);
+  color: var(--base-negro);
+}
+
+.proyecto-visor img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  margin-bottom: var(--spacing-m);
+  background: #f9f9f9;
+}
+
+/* Botón de cierre y navegación del modal */
+.visor-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--body-texto-color);
+}
+.visor-nav {
+  margin-top: 20px;
+  display: flex;
+  gap: var(--spacing-l);
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--base-granate);
+}

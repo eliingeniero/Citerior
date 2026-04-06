@@ -1,0 +1,58 @@
+/* ==========================================================================
+   SECCIÓN DE BIENVENIDA (HOME)
+   ========================================================================== */
+:root {
+  /* Variables exclusivas de la portada principal */
+  --hero-titulo-color: var(--base-granate);
+  --hero-texto-color: var(--base-gris-oscuro);
+  --hero-overlay-color: rgba(255, 255, 255, 0.75);
+  --hero-padding-top: calc(var(--spacing-xl) + 20px);
+  --hero-max-width-texto: 700px;
+}
+
+/* Contenedor principal de la portada */
+.portada-bienvenida {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--hero-padding-top) var(--padding-seccion-h-short) var(--spacing-l) var(--padding-seccion-h-short);
+  position: relative;
+}
+
+/* Capa blanca semi-transparente sobre la imagen de fondo */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-overlay-color);
+  top: 0;
+  left: 0;
+}
+
+/* Contenedor del texto Hero */
+.hero-content {
+  position: relative;
+  max-width: var(--hero-max-width-texto);
+  z-index: 5;
+}
+
+/* Título de gran impacto en la portada */
+.hero-content h1 {
+  font-size: clamp(32px, 8vw, 64px);
+  font-weight: 800;
+  color: var(--hero-titulo-color);
+  line-height: var(--hero-line-height);
+  margin-bottom: var(--spacing-l);
+}
+
+/* Ajuste para el recuadro de texto en la portada */
+.hero-content .card {
+  margin-bottom: var(--spacing-l);
+  background-color: rgba(255, 255, 255, 0.9); /* Un poco de transparencia opcional */
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: var(--hero-texto-color);
+  margin-bottom: 0; /*var(--spacing-m);*/
+}
