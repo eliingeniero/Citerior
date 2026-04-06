@@ -1,0 +1,115 @@
+/* ==========================================================================
+   SECCIÓN: EL ESTUDIO (Introducción y Equipo)
+   ========================================================================== */
+:root {
+  /* Variables visuales de la sección del equipo y estudio */
+  --img-intro-altura: 450px;
+  --equipo-imagen-altura: 350px;
+  --equipo-foto-filtro: grayscale(100%);
+  --equipo-nombre-color: var(--base-negro);
+  --equipo-rol-color: var(--base-granate);
+}
+
+/* Contenedor de la introducción con fondo desenfocado */
+.introduccion-estudio {
+  padding: var(--padding-seccion-v) var(--padding-seccion-h);
+  background: var(--hero-overlay-color);
+  backdrop-filter: var(--cabecera-desenfoque);
+}
+
+.intro-container {
+  display: flex;
+  gap: var(--spacing-l);
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos de la imagen principal del estudio */
+.intro-image {
+  flex: 1;
+  min-width: 300px;
+  height: var(--img-intro-altura);
+  object-fit: cover;
+  filter: grayscale(0.2);
+  transition: var(--transicion-std);
+}
+
+/* Contenido textual de la introducción */
+.intro-content {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.1rem;
+  color: var(--base-gris-oscuro);
+}
+
+/* Bloque inferior que muestra a los miembros del equipo */
+.seccion-equipo {
+  padding: var(--padding-seccion-v) var(--padding-seccion-h);
+  background-color: var(--cabecera-fondo);
+  text-align: center;
+}
+/* Cuadrícula de fotos del equipo */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-l);
+  max-width: 1200px;
+  margin: var(--spacing-xl) auto 0;
+}
+.team-member {
+  text-align: left;
+}
+/* Imágenes del equipo con efecto de blanco y negro a color */
+.team-member img {
+  width: 100%;
+  height: var(--equipo-imagen-altura);
+  object-fit: cover;
+  margin-bottom: var(--spacing-xs);
+  filter: var(--equipo-foto-filtro);
+  transition: var(--transicion-std);
+}
+.team-member:hover img {
+  filter: grayscale(0%);
+}
+.team-member h3 {
+  font-size: 1.1rem;
+  letter-spacing: var(--ls-std);
+  margin-bottom: var(--spacing-xxs);
+}
+.team-member p {
+  font-size: 0.9rem;
+  color: var(--equipo-rol-color);
+}
+
+/* Estilos específicos para el layout en zigzag */
+.team-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-l) 0;
+}
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  text-align: left;
+}
+/* Efecto Zigzag: Las filas pares invierten su orden */
+.member-row:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.member-image {
+  flex: 0 0 40%;
+  max-width: 400px;
+}
+.member-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--card-radio);
+  box-shadow: var(--card-sombra);
+}
