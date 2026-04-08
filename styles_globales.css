@@ -30,9 +30,11 @@
   --titulo-letra-espaciado: var(--spacing-xs);
   --cabecera-fondo: rgba(255, 255, 255, 0.9);
   --cabecera-desenfoque: blur(6px);
-  --cabecera-padding-v: var(--spacing-s);
+  --cabecera-padding-v: 0.75rem; /* Reducido de 1rem (16px) a 12px */
   --cabecera-padding-h: 5%;
-  --cabecera-logo-altura: 60px;
+  --cabecera-logo-altura: 50px; /* Reducido de 60px */
+  --cabecera-altura-total: 40px; /* 50px logo + 12px*2 padding */
+  --hero-overlay-color: rgba(0, 0, 0, 0.3);
   --menu-link-color: var(--base-negro);
   --menu-link-activo-color: var(--base-granate);
   --menu-gap: var(--spacing-m);
@@ -49,8 +51,8 @@
   --card-sombra-hover: 0 15px 30px rgba(0, 0, 0, 0.1);
   --card-radio: var(--spacing-xxs);
   --barrabajo-fondo: var(--base-blanco-sucio);
-  --barrabajo-padding: var(--spacing-xl) var(--spacing-s);
-  --barrabajo-logo-altura: 50px;
+  --barrabajo-padding: var(--spacing-xs) var(--spacing-xxs); /* Reducido de 64px a 32px vertical */
+  --barrabajo-logo-altura: 40px; /* Reducido de 50px */
   --barrabajo-texto-color: var(--base-gris-oscuro);
   --barrabajo-copy-size: 13px;
   --transicion-std: 0.4s ease;
@@ -62,6 +64,7 @@
   --padding-seccion-h: 10%;
   --ls-std: 1px;
   --ls-titles: 3px;
+  --altura-cabecera: 25vh;
 }
 
 /* ==========================================================================
@@ -77,12 +80,16 @@
 
 /* Define cuánto espacio se deja en la parte superior del body para evitar que el menú fijo tape el contenido */
 body {
-  padding-top: 25px;
+  padding-top: var(--cabecera-altura-total);
+  /* Configuración para mantener el footer al fondo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 @media (max-width: 767px) {
   body {
-    padding-top: 25px;
+    padding-top: var(--cabecera-altura-total);
   }
 }
 
@@ -93,6 +100,11 @@ body {
   background-image: url("img/fondo01.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
+
+/* Hace que el contenido principal crezca para ocupar el espacio disponible */
+main {
+  flex: 1;
 }
 
 /* Estilo común para todos los encabezados */
@@ -216,7 +228,7 @@ h3 {
 
 /* Cabecera visual que aparece en la parte superior de las subpáginas */
 .cabecera-seccion {
-  min-height: 40vh;
+  min-height: var(--altura-cabecera);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +281,7 @@ h3 {
 /* Ajustes para tablets y escritorio */
 @media (min-width: 768px) {
   .barrarriba {
-    padding: var(--spacing-l) var(--padding-seccion-h);
+    padding: var(--cabecera-padding-v) var(--padding-seccion-h); /* Usamos el padding reducido también en escritorio */
   }
   .barrabajo-container {
     grid-template-columns: auto 1fr auto;

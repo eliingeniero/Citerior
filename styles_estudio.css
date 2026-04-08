@@ -97,6 +97,20 @@
   align-items: center;
   gap: var(--spacing-xl);
   text-align: left;
+
+  /* Animación de entrada/salida (Intersection Observer) */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Estado visible activado por JS */
+.member-row.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* Efecto Zigzag: Las filas pares invierten su orden */
 .member-row:nth-child(even) {
@@ -112,4 +126,25 @@
   height: auto;
   border-radius: var(--card-radio);
   box-shadow: var(--card-sombra);
+}
+
+/* ==========================================================================
+   RESPONSIVE: SECCIÓN EQUIPO (Layout en zigzag para móviles)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .member-row {
+    flex-direction: column; /* Apila la imagen y el texto verticalmente */
+    text-align: center; /* Centra el texto debajo de la imagen */
+    gap: var(--spacing-s); /* Reduce el espacio entre elementos apilados */
+  }
+
+  /* Asegura que el orden inverso no se aplique en móviles */
+  .member-row:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .member-image {
+    max-width: 80%; /* Ajusta el ancho de la imagen para que no ocupe el 100% y tenga un poco de margen */
+  }
 }

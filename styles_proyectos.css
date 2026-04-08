@@ -15,7 +15,6 @@
   padding: var(--spacing-l) 10%;
   max-width: 1200px;
   margin: 0 auto;
-  background: var(--hero-overlay-color);
 }
 
 /* Tarjeta individual de proyecto con borde inferior dinámico */

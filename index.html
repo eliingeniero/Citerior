@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <!-- BARRARRIBA: Cabecera fija con logo -->
     <header class="barrarriba">
       <a href="index.html" class="logo">
@@ -34,7 +35,7 @@
     </header>
 
     <!-- PORTADA PRINCIPAL -->
-    <main>
+    <main id="contenido-principal">
       <section class="portada-bienvenida">
         <div class="overlay"></div>
 
@@ -71,7 +72,8 @@
         </a>
         <div class="barrabajo-copy">
           <p>
-            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="accesibilidad.html">Accesibilidad</a> |
+            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> |
+            <!-- <a href="accesibilidad.html">Accesibilidad</a> | -->
             <a href="cookies.html">Cookies</a>
           </p>
         </div>
@@ -91,17 +93,6 @@
       </div>
     </div>
 
-    <script>
-      function handleCookies(decision) {
-        localStorage.setItem("cookieConsent", decision);
-        document.getElementById("cookie-banner").style.display = "none";
-      }
-
-      window.onload = function () {
-        if (!localStorage.getItem("cookieConsent")) {
-          document.getElementById("cookie-banner").style.display = "block";
-        }
-      };
-    </script>
+    <script src="scripts_globales.js"></script>
   </body>
 </html>

@@ -39,20 +39,22 @@
       <!-- SCROLLPAG -->
       <section class="projects-grid">
         <!-- Proyecto 1 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Residencial Ourense"
           onclick="
             abrirProyecto('Residencial Ourense', ['img/1.png', 'img/2.png', 'img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png'])
           "
         >
-          <img src="img/1.png" alt="Proyecto Residencial" class="img-adaptable" />
+          <img src="img/1.png" alt="Render exterior de edificio residencial en Ourense" class="img-adaptable" />
           <h3>Residencial Ourense</h3>
           <p>Ourense / 2023</p>
-        </div>
+        </button>
 
         <!-- Proyecto 2 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Rehabilitación Casco Vello"
           onclick="
             abrirProyecto('Rehabilitación Casco Vello', [
               'img/12.png',
@@ -69,14 +71,15 @@
             ])
           "
         >
-          <img src="img/12.png" alt="Proyecto Rehabilitación" class="img-adaptable" />
+          <img src="img/12.png" alt="Detalle de fachada rehabilitada en piedra" class="img-adaptable" />
           <h3>Rehabilitación Casco Vello</h3>
           <p>Vigo / 2022</p>
-        </div>
+        </button>
 
         <!-- Proyecto 3 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Plan Urbano Sostenible"
           onclick="
             abrirProyecto('Plan Urbano Sostenible', [
               'img/23.png',
@@ -93,14 +96,15 @@
             ])
           "
         >
-          <img src="img/23.png" alt="Proyecto Urbano" class="img-adaptable" />
+          <img src="img/23.png" alt="Plano de intervención urbanística" class="img-adaptable" />
           <h3>Plan Urbano Sostenible</h3>
           <p>A Coruña / 2024</p>
-        </div>
+        </button>
 
         <!-- Proyecto 4 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Vivienda Unifamiliar GZ"
           onclick="
             abrirProyecto('Vivienda Unifamiliar GZ', [
               'img/34.png',
@@ -117,14 +121,15 @@
             ])
           "
         >
-          <img src="img/34.png" alt="Vivienda Unifamiliar" />
+          <img src="img/34.png" alt="Vivienda moderna integrada en el paisaje rural" />
           <h3>Vivienda Unifamiliar GZ</h3>
           <p>Lugo / 2023</p>
-        </div>
+        </button>
 
         <!-- Proyecto 5 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Centro Cultural Portuario"
           onclick="
             abrirProyecto('Centro Cultural Portuario', [
               'img/45.png',
@@ -141,14 +146,15 @@
             ])
           "
         >
-          <img src="img/45.png" alt="Centro Cultural" />
+          <img src="img/45.png" alt="Estructura de madera y cristal en el puerto" />
           <h3>Centro Cultural Portuario</h3>
           <p>Marín / 2021</p>
-        </div>
+        </button>
 
         <!-- Proyecto 6 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Sede Corporativa Enerxía"
           onclick="
             abrirProyecto('Sede Corporativa Enerxía', [
               'img/56.png',
@@ -165,14 +171,15 @@
             ])
           "
         >
-          <img src="img/56.png" alt="Oficinas" />
+          <img src="img/56.png" alt="Interiores de oficinas diáfanas" />
           <h3>Sede Corporativa Enerxía</h3>
           <p>Santiago / 2022</p>
-        </div>
+        </button>
 
         <!-- Proyecto 7 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Hotel Boutique Ribeira Sacra"
           onclick="
             abrirProyecto('Hotel Boutique Ribeira Sacra', [
               'img/67.png',
@@ -189,14 +196,15 @@
             ])
           "
         >
-          <img src="img/67.png" alt="Hotel" />
+          <img src="img/67.png" alt="Hotel con vistas al cañón del Sil" />
           <h3>Hotel Boutique Ribeira Sacra</h3>
           <p>Monforte / 2024</p>
-        </div>
+        </button>
 
         <!-- Proyecto 8 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Reforma Ático Singular"
           onclick="
             abrirProyecto('Reforma Ático Singular', [
               'img/78.png',
@@ -213,14 +221,15 @@
             ])
           "
         >
-          <img src="img/78.png" alt="Interiorismo" />
+          <img src="img/78.png" alt="Salón con techos altos y luz natural" />
           <h3>Reforma Ático Singular</h3>
           <p>Madrid / 2023</p>
-        </div>
+        </button>
 
         <!-- Proyecto 9 -->
-        <div
+        <button
           class="project"
+          aria-label="Ver proyecto Paisajismo Parque Central"
           onclick="
             abrirProyecto('Paisajismo Parque Central', [
               'img/89.png',
@@ -238,15 +247,15 @@
             ])
           "
         >
-          <img src="img/89.png" alt="Paisajismo" />
+          <img src="img/89.png" alt="Senderos peatonales en zona verde" />
           <h3>Paisajismo Parque Central</h3>
           <p>Pontevedra / 2021</p>
-        </div>
+        </button>
       </section>
     </main>
 
     <!-- VISOR DE PROYECTOS -->
-    <div id="proyectoVisor" class="proyecto-visor">
+    <div id="proyectoVisor" class="proyecto-visor" role="dialog" aria-modal="true" aria-labelledby="proyectoTitulo">
       <div class="visor-contenido">
         <span class="visor-cerrar" onclick="cerrarProyecto()">&times;</span>
         <h2 id="proyectoTitulo"></h2>
@@ -258,37 +267,7 @@
       </div>
     </div>
 
-    <script>
-      let imagenesActuales = [];
-      let indiceActual = 0;
-
-      function abrirProyecto(titulo, imagenes) {
-        imagenesActuales = imagenes;
-        indiceActual = 0;
-        document.getElementById("proyectoTitulo").innerText = titulo;
-        document.getElementById("proyectoImagen").src = imagenesActuales[indiceActual];
-        document.getElementById("proyectoVisor").style.display = "flex";
-      }
-
-      function cerrarProyecto() {
-        document.getElementById("proyectoVisor").style.display = "none";
-      }
-
-      function cambiarImagen(dir) {
-        indiceActual += dir;
-        if (indiceActual < 0) indiceActual = imagenesActuales.length - 1;
-        if (indiceActual >= imagenesActuales.length) indiceActual = 0;
-        document.getElementById("proyectoImagen").src = imagenesActuales[indiceActual];
-      }
-
-      // Cerrar al hacer clic fuera del contenido (en el fondo oscuro)
-      window.onclick = function (event) {
-        const visor = document.getElementById("proyectoVisor");
-        if (event.target == visor) {
-          cerrarProyecto();
-        }
-      };
-    </script>
+    <script src="scripts_proyectos.js"></script>
 
     <!-- BARRABAJO -->
     <footer class="barrabajo">
@@ -307,7 +286,8 @@
         </a>
         <div class="barrabajo-copy">
           <p>
-            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="accesibilidad.html">Accesibilidad</a> |
+            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> |
+            <!-- <a href="accesibilidad.html">Accesibilidad</a> | -->
             <a href="cookies.html">Cookies</a>
           </p>
         </div>

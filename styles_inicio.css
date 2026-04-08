@@ -6,7 +6,7 @@
   --hero-titulo-color: var(--base-granate);
   --hero-texto-color: var(--base-gris-oscuro);
   --hero-overlay-color: rgba(255, 255, 255, 0.75);
-  --hero-padding-top: calc(var(--spacing-xl) + 20px);
+  --hero-padding-top: var(--spacing-xl); /* Ajusta este valor (4rem/64px) para subir o bajar el título */
   --hero-max-width-texto: 700px;
 }
 
@@ -14,8 +14,9 @@
 .portada-bienvenida {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding: var(--hero-padding-top) var(--padding-seccion-h-short) var(--spacing-l) var(--padding-seccion-h-short);
+  align-items: flex-start; /* Cambiado de center a flex-start para que el contenido empiece arriba */
+  padding: var(--hero-padding-top) var(--padding-seccion-h-short) var(--spacing-l) var(--padding-seccion-h-short); /* Espaciado superior aumentado para dar más aire al título */
+  /* arriba derecha abajo izquierda */
   position: relative;
 }
 
@@ -42,7 +43,7 @@
   font-weight: 800;
   color: var(--hero-titulo-color);
   line-height: var(--hero-line-height);
-  margin-bottom: var(--spacing-l);
+  margin-bottom: var(--spacing-xl); /* Aumentado el espacio entre el título y la tarjeta */
 }
 
 /* Ajuste para el recuadro de texto en la portada */

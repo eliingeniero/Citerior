@@ -38,8 +38,9 @@
 
       <!-- LISTA DE SERVICIOS: Presentación vertical elegante -->
       <section class="contenedor-servicios">
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Proyectos de obra nueva"
           onclick="
             abrirServicio(
               'Proyectos de obra nueva',
@@ -50,10 +51,11 @@
           <span class="servicio-numero">01</span>
           <h2 class="servicio-titulo">Proyectos de obra nueva</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Rehabilitación y reforma"
           onclick="
             abrirServicio(
               'Rehabilitación y reforma',
@@ -64,10 +66,11 @@
           <span class="servicio-numero">02</span>
           <h2 class="servicio-titulo">Rehabilitación y reforma</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Dirección de obra"
           onclick="
             abrirServicio(
               'Dirección de obra',
@@ -78,10 +81,11 @@
           <span class="servicio-numero">03</span>
           <h2 class="servicio-titulo">Dirección de obra</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Obra civil - project manager"
           onclick="
             abrirServicio(
               'Obra civil - project manager',
@@ -92,10 +96,11 @@
           <span class="servicio-numero">04</span>
           <h2 class="servicio-titulo">Obra civil - project manager</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Energías renovables"
           onclick="
             abrirServicio(
               'Energías renovables - BIOENERGY IBÉRICA',
@@ -107,10 +112,11 @@
           <span class="servicio-numero">05</span>
           <h2 class="servicio-titulo">Energías renovables - BIOENERGY IBÉRICA</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Documentación técnica"
           onclick="
             abrirServicio(
               'Documentación técnica',
@@ -121,10 +127,11 @@
           <span class="servicio-numero">06</span>
           <h2 class="servicio-titulo">Documentación técnica</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
 
-        <div
+        <button
           class="servicio-item"
+          aria-label="Ver detalles de Modelado y visualización 3D"
           onclick="
             abrirServicio(
               'Modelado y visualización 3D',
@@ -135,13 +142,13 @@
           <span class="servicio-numero">07</span>
           <h2 class="servicio-titulo">Modelado y visualización 3D</h2>
           <i class="fa-solid fa-arrow-right"></i>
-        </div>
+        </button>
       </section>
     </main>
 
     <!-- VISOR DE DETALLE DE SERVICIO -->
-    <div id="servicioVisor" class="servicio-visor">
-      <div class="visor-contenido">
+    <div id="servicioVisor" class="servicio-visor" role="dialog" aria-modal="true" aria-labelledby="servicioTitulo">
+      <div class="visor-contenido" role="document">
         <span class="visor-cerrar" onclick="cerrarServicio()">&times;</span>
         <div id="visorLogoContenedor" class="visor-logo-contenedor" style="display: none">
           <img id="visorLogo" src="" alt="Bioenergy Ibérica" class="visor-logo" />
@@ -152,40 +159,7 @@
       </div>
     </div>
 
-    <script>
-      function abrirServicio(titulo, descripcion, logo = null) {
-        const visor = document.getElementById("servicioVisor");
-        const logoContenedor = document.getElementById("visorLogoContenedor");
-        const logoImg = document.getElementById("visorLogo");
-
-        document.getElementById("servicioTitulo").innerText = titulo;
-        document.getElementById("servicioDescripcion").innerHTML = descripcion;
-
-        if (logo) {
-          logoImg.src = logo;
-          logoContenedor.style.display = "block";
-        } else {
-          logoContenedor.style.display = "none";
-        }
-
-        visor.classList.add("active");
-        document.body.style.overflow = "hidden"; // Bloquea scroll
-      }
-
-      function cerrarServicio() {
-        const visor = document.getElementById("servicioVisor");
-        visor.classList.remove("active");
-        document.body.style.overflow = "auto"; // Restaura scroll
-      }
-
-      // Cerrar al hacer clic fuera del contenido
-      window.onclick = function (event) {
-        const visor = document.getElementById("servicioVisor");
-        if (event.target == visor) {
-          cerrarServicio();
-        }
-      };
-    </script>
+    <script src="scripts_servicios.js"></script>
 
     <!-- BARRABAJO -->
     <footer class="barrabajo">
@@ -204,7 +178,8 @@
         </a>
         <div class="barrabajo-copy">
           <p>
-            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="accesibilidad.html">Accesibilidad</a> |
+            © Citerior S.L 2025 | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> |
+            <!-- <a href="accesibilidad.html">Accesibilidad</a> | -->
             <a href="cookies.html">Cookies</a>
           </p>
         </div>
